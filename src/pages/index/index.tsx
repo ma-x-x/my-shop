@@ -18,7 +18,7 @@ export default class Index extends Component {
     return (
       <View className="index">
         <Text>Hello world!</Text>
-        <GlobalFooter isActive="01" />
+        <GlobalFooter isActive={0} />
       </View>
     );
   }
