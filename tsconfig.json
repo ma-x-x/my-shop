@@ -20,12 +20,13 @@
     "resolveJsonModule": true,
     "typeRoots": ["node_modules/@types", "global.d.ts"],
     "paths": {
-      "@actions": ["src/actions"],
-      "@assets": ["src/assets"],
-      "@components": ["src/components"],
-      "@constants": ["src/constants"],
-      "@reducers": ["src/reducers"],
-      "@styles": ["src/styles"],
+      "@*": ["src/*"],
+      "@actions/*": ["src/actions/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@store/*": ["src/store/*"],
+      "@servers/*": ["src/servers/*"],
       "@utils": ["src/utils"]
     }
   },

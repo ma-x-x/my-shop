@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { View, Text } from "@tarojs/components";
-import GlobalFooter from "@components/GlobalFooter/index";
 import "./index.scss";
 
 export default class Index extends Component {
@@ -18,7 +17,6 @@ export default class Index extends Component {
     return (
       <View className="index">
         <Text>Hello world!</Text>
-        <GlobalFooter isActive="01" />
       </View>
     );
   }

@@ -1,4 +1,4 @@
-import path from "path";
+import { resolve } from "path";
 
 const config = {
   projectName: "my-shop",
@@ -14,13 +14,13 @@ const config = {
   plugins: [],
   defineConstants: {},
   alias: {
-    "@actions": path.resolve(__dirname, "..", "src/actions"),
-    "@assets": path.resolve(__dirname, "..", "src/assets"),
-    "@components": path.resolve(__dirname, "..", "src/components"),
-    "@constants": path.resolve(__dirname, "..", "src/constants"),
-    "@reducers": path.resolve(__dirname, "..", "src/reducers"),
-    "@styles": path.resolve(__dirname, "..", "src/styles"),
-    "@utils": path.resolve(__dirname, "..", "src/utils"),
+    "@actions": resolve(__dirname, "..", "src/actions"),
+    "@assets": resolve(__dirname, "..", "src/assets"),
+    "@components": resolve(__dirname, "..", "src/components"),
+    "@constants": resolve(__dirname, "..", "src/constants"),
+    "@reducers": resolve(__dirname, "..", "src/reducers"),
+    "@styles": resolve(__dirname, "..", "src/styles"),
+    "@utils": resolve(__dirname, "..", "src/utils"),
   },
   copy: {
     patterns: [],
@@ -57,10 +57,24 @@ const config = {
         config: {},
       },
       cssModules: {
-        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+        enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: "module", // 转换模式，取值为 global/module
           generateScopedName: "[name]__[local]___[hash:base64:5]",
+        },
+      },
+    },
+  },
+  weapp: {
+    module: {
+      postcss: {
+        // css modules 功能开关与相关配置
+        cssModules: {
+          enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
+          config: {
+            namingPattern: "module", // 转换模式，取值为 global/module，下文详细说明
+            generateScopedName: "[name]__[local]___[hash:base64:5]",
+          },
         },
       },
     },
